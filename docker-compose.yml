@@ -1,0 +1,15 @@
+version: '3'
+services:
+  com_fr_s_1:
+    image: my_freer_ubu:third
+    user: root
+    volumes:
+       - ${APP_PATH_HOST_users}:${APP_PATH_CONTAINER_users}
+       - ${APP_PATH_HOST_clients}:${APP_PATH_CONTAINER_clients}
+    stdin_open: true
+    tty: true
+  com_fr_c_1:
+    image: my_freer_ubu:second
+#    working_dir: ${APP_PATH_CONTAINER}
+    stdin_open: true
+    tty: true
